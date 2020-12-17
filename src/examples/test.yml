@@ -10,9 +10,9 @@ usage:
   workflows:
     test:
       jobs:
-        test:
-          context: npm
-          steps:
-            - npm/login
-            - run: npm ci
-            - run: npm test
+        - test:
+            context: npm
+            steps:
+              - npm/login
+              - run: npm ci
+              - run: npm test
