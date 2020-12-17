@@ -49,7 +49,7 @@ workflows:
       # Publish development version(s) of the orb.
       - orb-tools/publish-dev:
           orb-name: takescoop/npm
-          context: circleci-orbs # A restricted context containing your private publishing credentials. Will only execute if approved by an authorized user.
+          context: orb-publish # A restricted context containing your private publishing credentials. Will only execute if approved by an authorized user.
           requires: [hold-for-dev-publish]
       # Trigger an integration workflow to test the
       # dev:${CIRCLE_SHA1:0:7} version of your orb
