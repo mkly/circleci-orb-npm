@@ -1,0 +1,18 @@
+description: >
+  Log in, install, and test
+# Provide a use-case based example for using this orb.
+# Everything in the `usage` section will be displayed in the orb registry.
+# Comments are not retained.
+usage:
+  version: 2.1
+  orbs:
+    npm: takescoop/npm@1.2.3
+  workflows:
+    test:
+      jobs:
+        test:
+          context: npm
+          steps:
+            - npm/login
+            - run: npm ci
+            - run: npm test

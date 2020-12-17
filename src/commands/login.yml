@@ -1,0 +1,12 @@
+description: >
+  Configures npm to use a token supplied from the environment
+parameters:
+  environment_variable:
+    description: The environment varible where the npm token is defined
+    default: NPM_TOKEN
+    type: env_var_name
+steps:
+  - run:
+      name: npm login
+      command: |
+        echo "//registry.npmjs.org/:_authToken=${<< parameters.environment_variable >>}" > .npmrc

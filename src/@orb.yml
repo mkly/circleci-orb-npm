@@ -1,0 +1,6 @@
+version: 2.1
+
+description: >
+  Utilities for configuring npm
+display:
+  source_url: "https://www.github.com/takescoop/circleci-orb-npm"
