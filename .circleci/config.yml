@@ -42,6 +42,9 @@ workflows:
       - orb-tools/publish-dev:
           orb-name: takescoop/npm
           context: orb-publish # A restricted context containing your private publishing credentials. Will only execute if approved by an authorized user.
+          requires:
+            - orb-tools/lint
+            - orb-tools/pack
       # Trigger an integration workflow to test the
       # dev:${CIRCLE_SHA1:0:7} version of your orb
       - orb-tools/trigger-integration-tests-workflow:
